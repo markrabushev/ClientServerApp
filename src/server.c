@@ -18,11 +18,14 @@ struct FactorialArgs {
 };
 
 uint64_t Factorial(const struct FactorialArgs *args) {
-    uint64_t partialResult = 1;
-    for (uint64_t i = args->begin; i <= args->end; i++)
-        partialResult = (partialResult * i) % args->mod;
-
-    return partialResult;
+    uint64_t res = 1;
+    uint64_t p = args->mod;
+    for (uint64_t i = args->begin; i <= args->end; ++i) {
+        if(i%p != 0){
+            res = res*i;
+        }
+    }
+    return res % p;
 }
 
 void *ThreadFactorial(void *args) {

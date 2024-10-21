@@ -13,8 +13,8 @@
 #include <sys/time.h>
 
 #include "MultModulo.h"
-//./client --k 12 --mod 13 --servers servers.txt
-//./client --k 100 --mod 202 --servers servers.txt
+//./client --k 100 --mod 199 --servers servers.txt
+//./client --k 10 --mod 202 --servers servers.txt
 uint64_t k = -1;
 uint64_t mod = -1;
 int servers_number = -1;
@@ -215,7 +215,7 @@ int main(int argc, char **argv) {
         char portName[10];
         sprintf(portName, "%d", to[i].port);
 
-        execl("./server", "server", "--port", portName, "--tnum", "6", NULL);
+        execl("./server", "server", "--port", portName, "--tnum", "2", NULL);
         perror("Failed to start server");
         exit(1);
       }

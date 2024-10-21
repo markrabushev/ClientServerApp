@@ -14,4 +14,4 @@ server: server.c libmultmodulo.a
 	$(CC) -pthread server.c -o server -L. -lmultmodulo $(CFLAGS)
 
 clean :
-	rm -f client server libmultmodulo.a *.o
+	rm -f client server libmultmodulo.a *.o 
